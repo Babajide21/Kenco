@@ -9,8 +9,12 @@
 <body>
      <section class=" relative h-[70vh] w-full bg-cover bg-center transition-all duration-500 ease-in-out mb-5" style="background-image: url('../public/Homewatch.jpg');">
         <span class="absolute inset-0 bg-[rgba(0,0,0,0.3)]"></span>
-        <div class="header px-10 lg:px-1 py-8 lg:py-4 absolute w-full flex justify-between transition-all duration-500 ease-in-out z-10">
-            <img src="../public/Kenco+PM+logo+(1)+(1).png" alt="" class=" h-7 md:h-10 lg:h-12.5 left-0 transition-all duration-500 ease-in-out">
+        <div class="header px-10 lg:px-1 py-8 lg:py-4 fixed w-full flex justify-between transition-all items-center duration-500 ease-in-out z-10">
+          <div id="headtext" class="text-white lg:pl-3 text-lg md:text-xl transition-all duration-500 ease-in-out">
+            <p class="capitalize font-black font-serif">chibuike</p>
+            <p class="capitalize font-black -mt-2.5 font-serif">property</p>
+            <p class="capitalize font-black -mt-2.5 font-serif">management</p>
+          </div>
             <nav class="hidden lg:flex gap-10 items-center flex-wrap">
                 <a href="./index.html" class="text-white capitalize font-black text-lg">home</a>
                 <a href="./services.html" class="text-white capitalize font-black text-xl pb-1">Services</a>
@@ -50,45 +54,55 @@
         </div>
     </section>
 
-    <section class="py-7 px-10 md:flex md:px-5 justify-between gap-10 lg:px-10 transition-all duration-500 ease-in-out">
-      <div class="px-5 py-8">
-        <h1 class="text-3xl lg:text-4xl capitalize font-black mb-8">contact us.</h1>
-        <p class="text-gray-800 text-lg mb-8">Email: kencopm@gmail.com</p>
-        <p class="text-gray-800 text-lg mb-8">Phone: 561-386-4262</p>
-        <a href="" class="fab fa-instagram mr-3 text-xl"></a>
-        <a class="fab fa-facebook-f mr-3 text-xl"></a>
-        <a class="fab fab fa-twitter mr-3 text-xl"></a>
-        <a class="fab fa-linkedin-in mr-3 text-xl"></a>
+    <section class="py-7 bg-slate-100 items-center md:flex justify-between gap-10 md:px-10 lg:px-10 transition-all duration-500 ease-in-out">
+  <div class="px-5 py-8">
+    <h1 class="text-3xl lg:text-4xl capitalize font-black mb-8">contact us.</h1>
+    <p class="text-gray-800 text-lg mb-8">Email: Alayedaito@gmail.com</p>
+    <p class="text-gray-800 text-lg mb-8">Phone: 070-7336-2781</p>
+    <a href="#" class="fab fa-instagram mr-3 text-xl"></a>
+    <a href="#" class="fab fa-facebook-f mr-3 text-xl"></a>
+    <a href="#" class="fab fa-twitter mr-3 text-xl"></a>
+    <a href="#" class="fab fa-linkedin-in mr-3 text-xl"></a>
+  </div>
+
+  <div class="py-4 px-5 w-full md:w-1/2">
+    <form id="contactForm" novalidate>
+      <div class="mb-4">
+        <h1 class="inline mr-1 text-lg md:text-xl">Name</h1>
+        <span class="text-slate-500">(required)</span>
       </div>
-      <div class="py-4 px-5">
-        <form action="" class="form">
-          <h1 class="inline mr-1 text-lg md:text-xl">Name</h1>
-          <!-- <span class="">(Required)</span> -->
-          <span class="text-slate-500">(required)</span>
-          <div class="flex gap-5 py-4">
-            <div class="">
-              <label for="text" class=" capitalize md:text-lg">first name</label>
-              <input type="text" class="border border-slate-500 w-full rounded-md capitalize placeholder:text-lg py-2 px-4 bg-[rgba(255,255,255,0.62)]">
-            </div>
-            <div class="">
-              <label for="text" class="capitalize md:text-lg">last name</label>
-              <input type="text" class="border border-slate-500 w-full rounded-md capitalize placeholder:text-lg py-2 px-4 bg-[rgba(255,255,255,0.62)]">
-            </div>
-          </div>
-          <div class="py-2">
-              <label for="Email" class="capitalize text-lg md:text-xl">email</label>
-              <span class="text-slate-500">(required)</span>
-              <input type="text" class="border border-slate-500 w-full rounded-md capitalize placeholder:text-lg py-2 px-4 bg-[rgba(255,255,255,0.62)]">
-          </div>
-          <div class="py-2">
-            <label for="text" class="capitalize">message</label>
-            <span class="text-slate-500">(required)</span>
-            <textarea name="" id="" cols="10" rows="3" class="border border-slate-500 w-full rounded-md capitalize placeholder:text-lg py-2 px-4 bg-[rgba(255,255,255,0.62)]"></textarea>
-          </div>
-          <button type="submit" class="bg-slate-800 px-15 py-3 font-black text-white text-lg md:text-xl w-full rounded-full hover:bg-[rgba(34,45,65,0.71)] capitalize transition-all duration-200 ease-in-out active:scale-90 mt-4">send</button>
-        </form>
+
+      <div class="flex flex-col md:flex-row gap-5 py-2">
+        <div class="w-full">
+          <label for="firstName" class="capitalize md:text-lg">first name</label>
+          <input id="firstName" name="firstName" type="text" class="border border-slate-500 w-full rounded-md capitalize placeholder:text-lg py-2 px-4 bg-[rgba(255,255,255,0.62)]">
+          <p class="text-red-500 text-sm mt-1 hidden" id="error-firstName">First name is required</p>
+        </div>
+        <div class="w-full">
+          <label for="lastName" class="capitalize md:text-lg">last name</label>
+          <input id="lastName" name="lastName" type="text" class="border border-slate-500 w-full rounded-md capitalize placeholder:text-lg py-2 px-4 bg-[rgba(255,255,255,0.62)]">
+          <p class="text-red-500 text-sm mt-1 hidden" id="error-lastName">Last name is required</p>
+        </div>
       </div>
-    </section>
+
+      <div class="py-2">
+        <label for="email" class="capitalize text-lg md:text-xl">email</label>
+        <span class="text-slate-500">(required)</span>
+        <input id="email" name="email" type="text" class="border border-slate-500 w-full rounded-md capitalize placeholder:text-lg py-2 px-4 bg-[rgba(255,255,255,0.62)]">
+        <p class="text-red-500 text-sm mt-1 hidden" id="error-email">Email is required</p>
+      </div>
+
+      <div class="py-2">
+        <label for="message" class="capitalize">message</label>
+        <span class="text-slate-500">(required)</span>
+        <textarea id="message" name="message" cols="10" rows="3" class="border border-slate-500 w-full rounded-md capitalize placeholder:text-lg py-2 px-4 bg-[rgba(255,255,255,0.62)]"></textarea>
+        <p class="text-red-500 text-sm mt-1 hidden" id="error-message">Message is required</p>
+      </div>
+
+      <button type="submit" class="bg-slate-800 px-15 py-3 font-black text-white text-lg md:text-xl w-full rounded-full hover:bg-[rgba(34,45,65,0.71)] capitalize transition-all duration-500 ease-in-out active:scale-90 mt-4">send</button>
+    </form>
+  </div>
+</section>
 
     <footer class="bg-black text-white py-4 md:px-0 lg:px-8">
       <section class="flex flex-col-reverse md:flex-row py-6 md:items-center justify-between px-4 md:px-6 border-b-2 border-white">
@@ -104,13 +118,13 @@
           <a href="./blog.html" class="text-lg font-bold capitalize border-b-1 w-fit mb-4">blogs</a>
           <a href="#" class="text-lg font-bold capitalize border-b-1 w-fit mb-4">contact us</a>
           <div class="md:hidden">
-            <p class="text-lg md:text-xl mb-4 font-bold">Email: kencopm@gmail.com</p>
-            <p class="text-lg md:text-xl mb-4 font-bold">Phone: 561-386-4262</p>
+            <p class="text-lg md:text-xl mb-4 font-bold">Email: Alayedaito@gmail.com</p>
+            <p class="text-lg md:text-xl mb-4 font-bold">Phone: 070-7336-2781</p>
           </div>
         </nav>
         <div class="hidden md:flex flex-col">
-          <p class="md:text- text-lg mb-4 font-black">Email: kencopm@gmail.com</p>
-          <p class="md:text- text-lg mb-4 font-black">Phone: 561-386-4262</p>
+          <p class="md:text- text-lg mb-4 font-black">Email: Alayedaito@gmail.com</p>
+          <p class="md:text- text-lg mb-4 font-black">Phone: 070-7336-2781</p>
         </div>
       </section>
       <p class="text-sm md:text-lg py-4 md:text-center px-8">© 2022 Kenco Property Management LLC. All Rights Reserved</p>
